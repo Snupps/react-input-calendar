@@ -1,11 +1,39 @@
-import React from 'react'
+"use strict";
 
-export default function ViewHeader({ prev, next, titleAction, data }) {
-  return (
-    <div className="navigation-wrapper">
-      <span className="icon" onClick={prev}>&lt;</span>
-      <span className="navigation-title" onClick={titleAction} >{data}</span>
-      <span className="icon" onClick={next}>&gt;</span>
-    </div>
-  )
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ViewHeader;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ViewHeader(_ref) {
+  var prev = _ref.prev;
+  var next = _ref.next;
+  var titleAction = _ref.titleAction;
+  var data = _ref.data;
+
+  return _react2.default.createElement(
+    "div",
+    { className: "navigation-wrapper" },
+    _react2.default.createElement(
+      "span",
+      { className: "icon prev", onClick: prev },
+      ""
+    ),
+    _react2.default.createElement(
+      "span",
+      { className: "navigation-title", onClick: titleAction },
+      data
+    ),
+    _react2.default.createElement(
+      "span",
+      { className: "icon next", onClick: next },
+      ""
+    )
+  );
 }
