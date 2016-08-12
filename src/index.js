@@ -263,7 +263,6 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.documentClick = function (e) {
-    e.preventDefault();
     if (!_this2.state.isCalendar) {
       _this2.setVisibility(false);
     }
