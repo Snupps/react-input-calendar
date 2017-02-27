@@ -67,6 +67,7 @@ var Calendar = function (_React$Component) {
     _initialiseProps.call(_this);
 
     var date = props.date ? (0, _moment2.default)(_util2.default.toDate(props.date)) : null;
+    var defaultDate = props.defaultDate ? (0, _moment2.default)(_util2.default.toDate(props.defaultDate)) : null;
     var minDate = props.minDate ? (0, _moment2.default)(_util2.default.toDate(props.minDate)) : null;
     var maxDate = props.maxDate ? (0, _moment2.default)(_util2.default.toDate(props.maxDate)) : null;
     var format = props.format || 'MM-DD-YYYY';
@@ -77,6 +78,7 @@ var Calendar = function (_React$Component) {
 
     _this.state = {
       date: date,
+      defaultDate : defaultDate,
       minDate: minDate,
       maxDate: maxDate,
       format: format,
@@ -139,7 +141,7 @@ var Calendar = function (_React$Component) {
       // its ok for this.state.date to be null, but we should never
       // pass null for the date into the calendar pop up, as we want
       // it to just start on todays date if there is no date set
-      var calendarDate = this.state.date || (0, _moment2.default)();
+      var calendarDate = this.state.date ? this.state.date : this.state.defaultDate || (0, _moment2.default)();
       var view = void 0;
 
       switch (this.state.currentView) {
